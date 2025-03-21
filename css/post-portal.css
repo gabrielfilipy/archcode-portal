@@ -1,0 +1,58 @@
+ul {
+    padding-left: 20px; /* Adiciona espaço à esquerda da lista (para a indentação) */
+}
+
+li {
+    margin-bottom: 10px; /* Adiciona espaço entre os itens da lista */
+}
+
+#post-portal {
+    width: 100%;
+}
+
+#author-data-post {
+    font-weight: lighter;
+    color: var(--color-gray-light);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#post-portal #post-title {
+    margin-bottom: 7px;
+    font-size: 25px;
+    color: var(--color-font-paragrafo-light);
+}
+
+#post-portal #post-image {
+    margin-top: 25px;
+    width: 100%;
+    border: 1px solid var(--color-gray-light);
+}
+
+#post-portal #post-description {
+    margin-top: 25px;
+    font-size: 18px;
+    color: var(--cor-black-modern);
+    line-height: 1.1;
+}
+
+@media (max-width: 800px) {
+    #post-portal #post-title {
+        font-size: 11px;
+    } 
+
+    #post-portal #post-description {
+        font-size: 14px;
+    } 
+
+    #post-portal #escritor-post {
+        font-size: 8px;
+    }
+
+    #post-portal #foto-escritor {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+

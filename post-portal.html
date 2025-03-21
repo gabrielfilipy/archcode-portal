@@ -1,0 +1,66 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descrição breve da página">
+    <meta name="author" content="Minimals Tecnologia da Informacao">
+    <meta name="keywords" content="palavras-chave, separadas, por, vírgulas">
+    <title>Frigo Pesca</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/post-portal.css">
+    <!--CSS-->
+
+    <!--ICONS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!--ICONS-->
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a onclick="home()"><img src="img/logo.png" alt="Logo" style="height: 40px;"></a>
+            <nav>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a onclick="home()">INICIO</a>
+        <a onclick="products()">PRODUTOS</a>
+        <a onclick="receitas()">RECEITAS</a>
+        <a onclick="contact()">CONTATO</a>
+    </div>
+
+    <div class="container">
+        <div id="post-portal">
+            <h1 id="post-title"></h1>
+            <p id="author-data-post"></p>
+            <img id="post-image" src="" alt="Post Image" />
+            <p id="post-description"></p>
+        </div>
+    </div><!--container-->
+
+    <script>
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.getElementById('post-title').textContent = getUrlParameter('title');
+        document.getElementById('post-image').src = getUrlParameter('image');
+        document.getElementById('post-description').innerHTML = getUrlParameter('description');
+
+        // Preenchendo as informações do autor
+        document.getElementById('author-data-post').innerHTML = `Escrito por <b>${getUrlParameter('author')}</b> em ${getUrlParameter('authorDate')}`;
+    </script>
+    <script src="js/rooter.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
