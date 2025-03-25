@@ -140,7 +140,7 @@ a {
     margin: 0 auto;
     box-sizing: border-box;
 }
-
+/* Estilo do menu */
 .menu {
     display: flex;
     list-style: none;
@@ -149,12 +149,51 @@ a {
 }
 
 .menu li {
+    position: relative;
     margin-left: 15px;
 }
 
 .menu li a {
     text-decoration: none;
     color: white;
+    padding: 10px;
+    display: block;
+}
+
+/* Estilo do submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-secondary);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style-type: none; 
+}
+
+.menu li:hover > .submenu {
+    display: block;
+}
+
+.submenu li a {
+    padding: 10px;
+    color: white;
+}
+
+.submenu li a:hover {
+    background-color: var(--color-primary);
+}
+
+.arrow {
+    font-size: 10px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.menu li:hover .arrow {
+    transform: rotate(180deg);
 }
 
 .header img {
