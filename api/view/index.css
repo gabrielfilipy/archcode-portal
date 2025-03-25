@@ -150,7 +150,6 @@ a {
 
 .menu li {
     position: relative;
-    margin-left: 15px;
 }
 
 .menu li a {
@@ -162,6 +161,7 @@ a {
 
 /* Estilo do submenu */
 .submenu {
+    width: auto;
     display: none;
     position: absolute;
     top: 100%;
