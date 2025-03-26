@@ -1,11 +1,15 @@
 class AppController {
 
-    static home(req, res) {
-        res.render('home', { title: 'Home' });
+    static blog(req, res) {
+        res.render('home', { title: 'Blog' });
     }
 
-    static about(req, res) {
-        res.render('contact', { title: 'Contact' });
+    static blogPost(req, res) {
+        res.render('blog-post', { title: 'Postagem' });
+    } 
+
+    static contact(req, res) {
+        res.render('contact', { title: 'Contato' });
     } 
 
     static error(req, res) {

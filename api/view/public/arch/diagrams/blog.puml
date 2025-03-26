@@ -1,0 +1,18 @@
+@startuml
+class TBL_POST {
+    +POST_ID: int
+    +DATA_HORA: datetime
+    +USER_ID: int
+    +POST_DETAIL_ID: int
+    +TITLE: string
+}
+
+class TBL_POST_DETAIL {
+    +POST_DETAIL_ID: int
+    +CONTENT: text
+    +FOTO: string
+    +POST_ID: int
+}
+
+TBL_POST "1" --> "1" TBL_POST_DETAIL : contém um detalhamento de post
+@enduml
