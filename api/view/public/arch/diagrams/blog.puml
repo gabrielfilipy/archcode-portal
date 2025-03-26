@@ -1,9 +1,8 @@
 @startuml
 class TBL_POST {
     +POST_ID: int
-    +DATA_HORA: datetime
+    +DATE_HOURS: datetime
     +USER_ID: int
-    +POST_DETAIL_ID: int
     +TITLE: string
 }
 
