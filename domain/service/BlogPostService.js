@@ -15,6 +15,8 @@ class BlogPostService extends BaseService {
     }
   }
 
+  
+
 }
 
 module.exports = new BlogPostService();

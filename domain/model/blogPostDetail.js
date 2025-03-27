@@ -1,35 +1,44 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../../core/database/connection').sequelize; // Certifique-se de importar sequelize corretamente
-const BlogPost = require('./blogPost'); // Importando BlogPost
+const sequelize = require('../../core/database/connection').sequelize;
+const BlogPost = require('./blogPost');
 
 class BlogPostDetail extends Model {}
 
 BlogPostDetail.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    content: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    blogPostId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: BlogPost, // BlogPost precisa ser uma classe que estende Model
-        key: 'id'
+    {
+      blogPostDetailId: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+        field: 'blog_post_detail_id'
+      },
+      postContent: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        field: 'post_content'
+      },
+      blogPostId: {
+        type: DataTypes.UUID,
+        references: {
+          model: BlogPost,
+          key: 'blog_post_id'
+        },
+        field: 'blog_post_id'
+      },
+      postFoto: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        field: 'post_foto'
       }
+    },
+    {
+      sequelize,
+      modelName: 'BlogPostDetail',
+      tableName: 'tbl_blog_post_detail',
+      timestamps: false
     }
-  },
-  {
-    sequelize,
-    modelName: 'BlogPostDetail'
-  }
-);
-
-// Definir relacionamento
-BlogPostDetail.belongsTo(BlogPost, { foreignKey: 'blogPostId', as: 'blogPost' });
+  );
+  
+  BlogPostDetail.belongsTo(BlogPost, { foreignKey: 'blogPostId', as: 'blogPost' });
 
 module.exports = BlogPostDetail;

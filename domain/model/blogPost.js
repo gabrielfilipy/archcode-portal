@@ -1,25 +1,39 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../../core/database/connection').sequelize; // Certifique-se de importar sequelize corretamente
 
-class BlogPost extends Model {}
+class BlogPost extends Model { }
 
 BlogPost.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
+    {
+        postId: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            primaryKey: true,
+            field: 'blog_post_id'
+        },
+        postTitle: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            field: 'blog_title'
+        },
+        userId: {
+            type: DataTypes.UUID,
+            allowNull: false,
+            field: 'user_id'
+        },
+        date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+            field: 'date'
+        }
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false
+    {
+        sequelize,
+        modelName: 'BlogPost',
+        tableName: 'tbl_blog_post',
+        timestamps: false 
     }
-  },
-  {
-    sequelize,
-    modelName: 'BlogPost',
-    tableName: 'blog_posts' // Adicione o nome real da tabela no banco
-  }
 );
 
 module.exports = BlogPost;

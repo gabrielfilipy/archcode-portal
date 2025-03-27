@@ -27,6 +27,16 @@ class UserController {
 
   async create(req, res) {
     const data = req.body;
+  
+    if (!data.userName || !data.userLogin || !data.userPassword || !data.userEmail) {
+      return res.status(400).json({ message: "Todos os campos são obrigatórios" });
+    }
+  
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(data.userEmail)) {
+      return res.status(400).json({ message: "Email inválido" });
+    }
+
     try {
       const newUser = await UserService.create(data);
       res.status(201).json(newUser);

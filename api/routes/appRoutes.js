@@ -5,12 +5,6 @@ const BlogPostDetailController = require('../v1/controller/BlogPostDetailControl
 const UserController = require('../v1/controller/UserController');
 const AppController = require('../v1/controller/AppController');
 
-// PAGES
-router.get('/blog', AppController.blog);
-router.get('/blog-post', AppController.blogPost);
-router.get('/contact', AppController.contact);
-router.use(AppController.error);
-
 // BLOG
 router.get('/blog-posts', BlogPostController.getAll);
 router.get('/blog-posts/:id', BlogPostController.getById);

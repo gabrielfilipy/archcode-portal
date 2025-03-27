@@ -1,0 +1,42 @@
+-- Ativar extensão para gerar UUIDs automaticamente
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- Criar a tabela com chave primária UUID
+CREATE TABLE IF NOT EXISTS public.tbl_user
+(
+    user_id UUID DEFAULT uuid_generate_v4() NOT NULL,
+    user_name VARCHAR NOT NULL,
+    user_login VARCHAR NOT NULL,
+    user_password VARCHAR NOT NULL,
+    user_email VARCHAR,
+    CONSTRAINT tbl_user_pkey PRIMARY KEY (user_id)
+) TABLESPACE pg_default;
+
+-- Criar a tabela com chave primária UUID
+CREATE TABLE IF NOT EXISTS public.tbl_blog_post
+(
+    blog_post_id UUID DEFAULT uuid_generate_v4() NOT NULL,
+    blog_title VARCHAR NOT NULL,
+    user_id UUID NOT NULL, -- Alterado para UUID
+    date DATE NOT NULL,
+    CONSTRAINT tbl_blog_post_pkey PRIMARY KEY (blog_post_id),
+    CONSTRAINT tbl_blog_post_user_fk FOREIGN KEY (user_id)
+        REFERENCES public.tbl_user (user_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE CASCADE
+) TABLESPACE pg_default;
+
+-- Criar a tabela com chave primária UUID
+CREATE TABLE IF NOT EXISTS public.tbl_blog_post_detail
+(
+    blog_post_detail_id UUID NOT NULL DEFAULT uuid_generate_v4(),
+    post_content TEXT COLLATE pg_catalog."default" NOT NULL,
+    blog_post_id UUID NOT NULL, -- Alterado para UUID
+    post_foto TEXT COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT tbl_blog_post_detail_pkey PRIMARY KEY (blog_post_detail_id),
+    CONSTRAINT tbl_blog_post_detail_blog_post_fk FOREIGN KEY (blog_post_id)
+        REFERENCES public.tbl_blog_post (blog_post_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE CASCADE
+) TABLESPACE pg_default;
+

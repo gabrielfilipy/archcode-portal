@@ -1,9 +1,9 @@
 const BaseService = require('./BaseService');
-const BlogPostDetailRepository = require('../repository/BaseRepository');
+const BlogPostDetailRepository = require('../repository/BlogPostDetailRepository'); // Corrigido para BlogPostDetailRepository
 
 class BlogPostDetailService extends BaseService {
   constructor() {
-    super(BlogPostDetailRepository);
+    super(BlogPostDetailRepository); // Agora utiliza o repositório correto
   }
 
   async findByBlogPostId(blogPostId) {
@@ -14,7 +14,6 @@ class BlogPostDetailService extends BaseService {
       throw new Error(error.message);
     }
   }
-
 }
 
 module.exports = new BlogPostDetailService();
