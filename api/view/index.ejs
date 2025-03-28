@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <% if (typeof hideLayout === "undefined" || !hideLayout) { %>
     <header class="header">
         <div class="container">
             <a href="/blog"><img src="/static/public/img/logo.png" alt="Logo" style="height: 40px;"></a>
@@ -39,16 +40,20 @@
             </nav>
         </div>
     </header>
+    <% } %>
 
+    <% if (typeof hideLayout === "undefined" || !hideLayout) { %>
     <div class="mobile-menu" id="mobileMenu">
         <a href="/blog">Home</a>
         <li><a href="/contact">Contato</a></li>
     </div> 
+    <% } %>
 
     <main>
         <%- include(body) %>
     </main>
 
+    <% if (typeof hideLayout === "undefined" || !hideLayout) { %>
     <div class="footer">
         <div class="container">
             <div class="flex-container">
@@ -90,6 +95,6 @@
         </div>
 
     </div><!--footer-->
+    <% } %>
 </body>
-
 </html>
