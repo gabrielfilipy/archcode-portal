@@ -1,31 +1,7 @@
 
 .container-dashboard {
-    width: 900px;
+    width: 1000px;
     margin: 0 auto;
-}
-
-.card-dashboard {
-    padding: 10px;
-    color: white;
-    margin-top: 25px;
-}
-
-.card-dashboard i {
-    font-size: 40px;
-}
-
-.card-dashboard h2 {
-    font-size: 30px;
-    text-align: right; 
-    font-weight: lighter;
-    margin: 0;
-    padding: 0;
-}
-
-.card-dashboard p {
-    text-align: right;
-    font-size: 10px;
-    color: white;
 }
 
 a {

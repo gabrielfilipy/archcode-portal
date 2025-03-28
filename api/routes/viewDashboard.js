@@ -6,8 +6,12 @@ router.get('/dashboard', (req, res) => {
     res.render("index", { body: "template/dashboard/dashboard", hideLayout: true });
 });
 
-router.get('/users', (req, res) => {
-    res.render("template/dashboard/dashboard", { body: "./user/UserHome", hideLayout: false });
+router.get('/dashboard/home', (req, res) => {
+    res.render("template/dashboard/index", { body: "./home/Home", hideLayout: false });
+});
+
+router.get('/dashboard/users', (req, res) => {
+    res.render("template/dashboard/index", { body: "./user/UserHome", hideLayout: false });
 });
 
 module.exports = router;

@@ -1,28 +1,12 @@
 <head>
     <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="/static/index.css">
-    <link rel="stylesheet" type="text/css" href="/static/template/dashboard/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/static/template/dashboard/home/Home.css">
     <!--CSS-->
 </head>
 
 <main>
-    
-    <div class="header-dashboard">
-        <div class="container-dashboard">
-            <i id="btn-menu" class="fa-solid fa-bars"></i>
-        </div><!--container-->
-    </div><!--header-dashboard-->
-    
-    <ul id="navbar-menu">
-        <a id="btn-closed"><i class="fa-solid fa-xmark"></i></a>
-        <li id="navbar-usuario"><i class="fa-solid fa-user"></i> Gabriel Filipy</li>
-        <li id="navbar-menu-item"><a href="/dashboard"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li id="navbar-menu-item"><a href="/users"><i class="fa-solid fa-users"></i> Users</a></li>
-        <li id="navbar-menu-item"><a href="/blog-posts"><i class="fa-solid fa-blog"></i> Blog</a></li>
-    </ul><!--navbar-menu-->
-
-    <div class="container-dashboard">
-        <% if (hideLayout) { %>
+    <div class="container">
+        <h2 id="title-principal"><i class="fa-solid fa-house"></i> Home</h2>
         <div class="flex-container">
             <div class="flex-item-4">
                 <div class="card-dashboard" style="background-color: var(--color-card-green);">
@@ -77,11 +61,7 @@
                 </div><!--card-dashboard-->
             </div><!--flex-item-->
         </div><!--flex-container-->
-        <% } %>
     </div><!--container-dashboard-->
-
-    <!--CARREGAR OS ELEMENTOS HTML AQUI-->
-    <%- include(body) %>
 </main>
 
 <script src="/static/template/dashboard/js/script.js"></script>
