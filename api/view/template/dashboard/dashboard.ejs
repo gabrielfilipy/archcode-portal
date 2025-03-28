@@ -5,15 +5,82 @@
 </head>
 
 <main>
+    <div class="header-dashboard">
+        <div class="container-dashboard">
+            <h3>aaaaaaaaaaaaaaaaaa</h3>
+            <i id="btn-menu" class="fa-solid fa-bars"></i>
+        </div><!--container-->
+    </div><!--header-dashboard-->
+    
+    <ul id="navbar-menu">
+        <a id="btn-closed"><i class="fa-solid fa-xmark"></i></a>
+        <li id="navbar-usuario"><i class="fa-solid fa-user"></i> Gabriel Filipy</li>
+        <li id="navbar-menu-item"><a href="/dashboard"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li id="navbar-menu-item"><a href="/users"><i class="fa-solid fa-users"></i> Users</a></li>
+        <li id="navbar-menu-item"><a href="/blog-posts"><i class="fa-solid fa-blog"></i> Blog</a></li>
+    </ul><!--navbar-menu-->
+
     <div class="container-dashboard">
-        <ul id="navbar-menu">
-            <a id="btn-menu"><i class="fa-solid fa-xmark"></i></a>
-            <li id="navbar-usuario">Gabriel Filipy</li>
-            <li id="navbar-menu-item"><a>Home</a></li>
-            <li id="navbar-menu-item"><a>User</a></li>
-            <li id="navbar-menu-item"><a>Blog</a></li>
-        </ul>
+        <% if (hideLayout) { %>
+        <div class="flex-container">
+            <div class="flex-item-4">
+                <div class="card-dashboard" style="background-color: var(--color-card-green);">
+                    <div class="flex-container">
+                        <div class="flex-item-2">
+                            <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div class="flex-item-2">
+                            <h2>18</h2>
+                            <p>E-mails</p>
+                        </div>
+                    </div>
+                </div><!--card-dashboard-->
+            </div><!--flex-item-->
+            <div class="flex-item-4">
+                <div class="card-dashboard" style="background-color: var(--color-card-red);">
+                    <div class="flex-container">
+                        <div class="flex-item-2">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="flex-item-2">
+                            <h2>4</h2>
+                            <p>Visitas</p>
+                        </div>
+                    </div>
+                </div><!--card-dashboard-->
+            </div><!--flex-item-->
+            <div class="flex-item-4">
+                <div class="card-dashboard" style="background-color: var(--color-card-yellow);">
+                    <div class="flex-container">
+                        <div class="flex-item-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                        <div class="flex-item-2">
+                            <h2>7</h2>
+                            <p>Publicações</p>
+                        </div>
+                    </div>
+                </div><!--card-dashboard-->
+            </div><!--flex-item-->
+            <div class="flex-item-4">
+                <div class="card-dashboard" style="background-color: var(--color-card-green);">
+                    <div class="flex-container">
+                        <div class="flex-item-2">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <div class="flex-item-2">
+                            <h2>5</h2>
+                            <p>Clientes</p>
+                        </div>
+                    </div>
+                </div><!--card-dashboard-->
+            </div><!--flex-item-->
+        </div><!--flex-container-->
+        <% } %>
     </div><!--container-dashboard-->
+
+    <!--CARREGAR OS ELEMENTOS HTML AQUI-->
+    <%- include(body) %>
 </main>
 
 <script src="/static/template/dashboard/js/script.js"></script>

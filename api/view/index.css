@@ -18,6 +18,11 @@ body {
     --color-primary: #070d4a;
     --color-secondary: #ef5ba1;
     --color-gray-light: #a5a9ae;
+
+    /*Dashboard*/
+    --color-card-green: #007171;
+    --color-card-red: #e53935 ;
+    --color-card-yellow: #f29b09;
 }
 
 h1, p {
