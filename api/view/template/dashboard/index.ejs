@@ -1,12 +1,10 @@
 <head>
     <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="/static/index.css">
     <link rel="stylesheet" type="text/css" href="/static/template/dashboard/dashboard.css">
     <!--CSS-->
 </head>
 
 <main>
-    
     <div class="header-dashboard">
         <div class="container-dashboard">
             <i id="btn-menu" class="fa-solid fa-bars"></i>
@@ -22,7 +20,7 @@
     </ul><!--navbar-menu-->
 
     <div class="container-dashboard">
-        <% if (hideLayout) { %>
+        <% if (typeof hideLayout === "undefined" || !hideLayout) { %>
         <div class="flex-container">
             <div class="flex-item-4">
                 <div class="card-dashboard" style="background-color: var(--color-card-green);">
@@ -80,8 +78,6 @@
         <% } %>
     </div><!--container-dashboard-->
 
-    <!--CARREGAR OS ELEMENTOS HTML AQUI-->
-    <%- include(body) %>
 </main>
 
 <script src="/static/template/dashboard/js/script.js"></script>
