@@ -28,7 +28,7 @@ class UserController {
   async create(req, res) {
     const data = req.body;
   
-    if (!data.userName || !data.userLogin || !data.userPassword || !data.userEmail) {
+    if (!data.userName || !data.userEmail) {
       return res.status(400).json({ message: "Todos os campos são obrigatórios" });
     }
   
@@ -38,7 +38,7 @@ class UserController {
     }
 
     try {
-      const newUser = await UserService.create(data);
+      const newUser = await UserService.save(data);
       res.status(201).json(newUser);
     } catch (error) {
       res.status(500).json({ message: error.message });
