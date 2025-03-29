@@ -1,0 +1,43 @@
+<head>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/static/template/dashboard/blog/Blog.css">
+    <!--CSS-->
+</head>
+
+<main>
+    <form action="">
+        <div class="container">
+            <h2 id="title-principal"><i class="fa-solid fa-rss"></i> Cadastrar publicação</h2>
+            <div class="flex-container">
+                <div class="flex-item-2">
+                    <label for="Nome">Título</label>
+                    <input type="text" name="user-name">
+                </div><!--flex-item-->
+
+                <div class="flex-item-2">
+                    <label class="label">Upload de Fotos</label>
+                    <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)"
+                        style="display: none;">
+                    <label for="fileInput" class="custom-file-upload">
+                        Selecione uma foto
+                    </label>
+                    <div class="image-preview" id="imagePreview"></div>
+                </div><!--flex-item-->
+
+                <div class="editor-container">
+                    <label for="editor">Conteúdo</label>
+                    <textarea id="editor"></textarea>
+                </div>
+
+                <div class="btn-base-align-right">
+                    <a href="/dashboard/blog/posts" id="btn-base" class="btn-back"
+                        style="background-color: grey;">Voltar</a>
+                    <button id="btn-base">Cadastrar</button>
+                </div>
+
+            </div><!--flex-container-->
+        </div><!--container-->
+    </form><!--form-->
+</main>
+
+<script src="/static/template/dashboard/blog/js/script.js"></script>

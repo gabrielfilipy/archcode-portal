@@ -6,15 +6,25 @@
 
 <main>
     <form action="">
-        <div class="flex-container">
-            <div class="flex-item-2">
-                <label for="Nome"></label>
-                <input type="text" name="user-name">
-            </div><!--flex-item-->
-            <div class="flex-item-2">
-                <label for="E-mail"></label>
-                <input type="text" name="user-email">
-            </div><!--flex-item-->
-        </div><!--flex-container-->
+        <div class="container">
+            <h2 id="title-principal"><i class="fa-solid fa-user-plus"></i> Cadastrar usuário</h2>
+            <div class="flex-container">
+                <div class="flex-item-2">
+                    <label for="Nome">Nome</label>
+                    <input type="text" name="user-name">
+                </div><!--flex-item-->
+                <div class="flex-item-2">
+                    <label for="E-mail">E-mail</label>
+                    <input type="text" name="user-email">
+                </div><!--flex-item-->
+                <div class="btn-base-align-right">
+                    <a href="/dashboard/users" id="btn-base" class="btn-back" style="background-color: grey;">Voltar</a>
+                    <button id="btn-base">Cadastrar</button>
+                </div>
+                
+            </div><!--flex-container-->
+        </div><!--container-->
     </form><!--form-->
 </main>
+
+<script src="/static/template/dashboard/user/js/script.js"></script>

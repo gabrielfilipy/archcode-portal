@@ -72,6 +72,39 @@ a {
     margin-bottom: 50px;
 }
 
+/* BUTTONS */
+#btn-link {
+    color: white;
+    background-color: var(--color-primary);
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 16px;
+    width: 150px;
+    border: none;
+}
+
+#btn-base {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-primary);
+    padding: 10px;
+    cursor: pointer;
+    width: 150px;
+    border: none;
+    line-height: 20px; 
+}
+
+.btn-base-align-right {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* BUTTONS */
+
 /* FLEX BOX */
 .flex-container {
     display: flex;

@@ -14,4 +14,16 @@ router.get('/dashboard/users', (req, res) => {
     res.render("template/dashboard/index", { body: "./user/UserHome", hideLayout: false });
 });
 
+router.get('/dashboard/users/form', (req, res) => {
+    res.render("template/dashboard/index", { body: "./user/UserForm", hideLayout: false });
+});
+
+router.get('/dashboard/blog/posts', (req, res) => {
+    res.render("template/dashboard/index", { body: "./blog/BlogHome", hideLayout: false });
+});
+
+router.get('/dashboard/blog/post/form', (req, res) => {
+    res.render("template/dashboard/index", { body: "./blog/BlogForm", hideLayout: false });
+});
+
 module.exports = router;
